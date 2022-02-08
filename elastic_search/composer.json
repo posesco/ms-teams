@@ -1,0 +1,6 @@
+{
+    "require": {
+        "elasticsearch/elasticsearch": "^7.10",
+        "guzzlehttp/guzzle": "^7.0"
+    }
+}
