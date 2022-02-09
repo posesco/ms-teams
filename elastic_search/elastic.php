@@ -67,11 +67,11 @@ function error_search($index, $app, $client)
     return $results['hits']['hits'][0]['_source']['message'];
 }
 
-function slow_search($index, $client)
+function slow_search($index, $value, $client)
 {
     $search = [
         'index'       => $index,
-        'size'        => 500,
+        'size'        => $value,
         'body'        => [
             'sort'        => [
                 "@timestamp" => [
@@ -126,10 +126,11 @@ function filter_app($response)
         } elseif ($app2) {
             $count_app2++;
             $msg_app2 = $response[$i]['_source']['message'];
-        } else {
-            $count_app3++;
-            $msg_app3 = $response[$i]['_source']['message'];
         }
+    }
+    if ($count != ($count_app1+$count_app2) ) {
+        $count_app3 = $count_app1+$count_app2-$count;
+        $msg_app3   = 'Slow php requests were detected that do not correspond to App1 or App2 applications.';
     }
 
     return array(

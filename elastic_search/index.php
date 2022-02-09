@@ -60,9 +60,9 @@ for ($i = 1; $i <= 9; $i++) {
                 }
             } 
         } elseif ($hit['_source']['php']) {
-
-            $response = slow_search($index_file, $client);
-            $count = count($response['groups']);
+            $value    = $hit['_source']['value'];
+            $response = slow_search($index_file, $value, $client);
+            $count    = count($response['groups']);
             for ($i = 0; $i < $count; $i++) {
 
                 if ($response['groups'][$i]['count'] > 0) {
