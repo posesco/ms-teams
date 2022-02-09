@@ -1,0 +1,12 @@
+FROM python:3.11.0a3-alpine3.15
+ENV SMTP_SERVER=mail.example.com
+ENV PASSWORD=S3CUR3PA55W0RD
+ENV SENDER_EMAIL=notification@example.com
+ENV ARTIFACT=''
+ENV ENV=''
+ENV PROJECT=''
+ENV DOMAIN=''
+ENV NAME_REPORT=''
+WORKDIR /data
+COPY . .
+CMD python3 send.py

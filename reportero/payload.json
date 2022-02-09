@@ -1,0 +1,43 @@
+{
+    "@type": "MessageCard",
+    "@context": "https://schema.org/extensions",
+    "summary": "Reporte Devops",
+    "themeColor": "f4f100",
+    "sections": [
+      {
+        "startGroup": true,
+        "title": "**Reporte: $NAME_REPORT**",
+        "activityImage": "https://www.clickssl.net/wp-content/uploads/2016/09/select-as-you-like-big.png",
+        "facts": [
+          {
+            "name": "Proyecto",
+            "value": "$PROJECT"
+          },
+          {
+            "name": "Entorno",
+            "value": "$ENV"
+          },
+          {
+            "name": "Dominio",
+            "value": "$URL"
+          }
+        ]
+      },
+      {
+        "startGroup": true,
+        "activitySubtitle": "Este reporte solo puede ser visualizado con conexion VPN"
+      }
+    ],
+    "potentialAction": [
+      {
+        "@type": "OpenUri",
+        "name": "Ver Reporte",
+        "targets": [
+          {
+            "os": "default",
+            "uri": "https://docs.microsoft.com/outlook/actionable-messages"
+          }
+        ]
+      }
+    ]
+  }
