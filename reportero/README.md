@@ -18,6 +18,7 @@ docker run --rm
 Or you can clone the repository and perform the image build
 
 ```
-git clone git@gitlab.wiedii.co:puma/reportero.git .
+git clone https://github.com/posesco/ms-teams.git .
+cd reportero
 docker build . -t reportero 
 ```
