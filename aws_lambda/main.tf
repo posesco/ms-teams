@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "back-logs-wiedii"
+    bucket = "back-logs"
     key    = "lambda/notifier-ms_teams.tfstate"
     region = "us-east-1"
   }
