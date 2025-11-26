@@ -5,6 +5,12 @@
 This CGI is enabled for sending emails and notifications in applications that receive JSON payloads with Slack or Microsoft Teams.
 
 ```
+git clone https://github.com/posesco/ms-teams.git .
+cd reportero
+docker build . -t reportero 
+```
+
+```
 docker run --rm 
     -v $PWD/document.html:/data/document.html 
     -e ARTIFACT='document.html' 
@@ -12,13 +18,6 @@ docker run --rm
     -e DOMAIN=https://myproject.com 
     -e PROJECT='My Project' 
     -e NAME_REPORT="Name Report"
-    wiediisas/reportero
+    reportero
 ```
 
-Or you can clone the repository and perform the image build
-
-```
-git clone https://github.com/posesco/ms-teams.git .
-cd reportero
-docker build . -t reportero 
-```
